@@ -1,0 +1,128 @@
+.navBar {
+    position: relative;
+    background: #eee;
+
+    &_ctn {
+        position: relative;
+        width: 100%;
+    }
+
+    &_button {
+        border: none;
+        background: transparent;
+
+        position: fixed;
+        left: 0.5rem;
+        top: 0.5rem;
+        z-index: 10;
+        cursor: pointer;
+
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
+}
+
+.showMenu {
+    width: 100%;
+    transition: all 1s;
+}
+
+.menuNav {
+    &_list {
+        list-style: none;
+
+        &_item {
+            position: relative;
+            a.active {
+                color: #3fffd2;
+
+            }
+
+            & a {
+                display: block;
+                padding: 10px 10px;
+                text-decoration: none;
+                // color: #3fffd2;
+                text-transform: uppercase;
+                font-weight: bold;
+                transition: all .4s;
+                &:after {
+                    content: ' ';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    right: 50%;
+                    height: 0;
+                    transition: all .4s;
+                    border-radius: 3px;
+
+                }
+
+                &:hover {
+                    &:after {
+                        content: ' ';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        height: 3px;
+                        background-color: #3fffd2;
+                        transition: all .4s;
+                    }
+                }
+            }
+
+
+        }
+
+        @media (max-width: 768px) {
+            overflow-y: scroll;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 100vh;
+            max-width: 290px;
+            margin: 0;
+            padding: 1rem 0;
+            overflow: hidden;
+            display: block;
+
+            &_item {
+                &:first-child {
+                    margin-top: 3rem;
+                }
+
+                & a {
+                    display: block;
+                    padding: 10px 20px;
+                    text-decoration: none;
+                    // color: #3fffd2;
+                    text-transform: uppercase;
+                    font-weight: bold;
+
+                    &.active {
+                        color: #3fffd2;
+
+                    }
+                }
+            }
+
+            &_showMenu {
+                width: 100%;
+                padding: 1rem;
+                transition: all 1s;
+            }
+        }
+
+        background: rgba(255, 255, 255, 1);
+        z-index: 9;
+        transition: all .800ms;
+        display: flex;
+        justify-content: right;
+
+    }
+
+}
