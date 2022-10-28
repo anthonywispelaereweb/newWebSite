@@ -16,24 +16,24 @@ function Header() {
     }
     const links = [
         {
-            path: "",
-            text: "Accueil",
-            exact: true
+            path: "/",
+            text: "Home",
+            end: true
         },
         {
             path: "about",
-            text: "Mes expériences",
-            exact: false
+            text: "Experiences",
+            end: false
         },
         {
             path: "services",
-            text: "Mes services",
-            exact: false
+            text: "Services",
+            end: false
         },
         {
             path: "contact",
             text: "Contacts",
-            exact: false
+            end: false
         }
     ]
 
@@ -50,9 +50,9 @@ function Header() {
                         <NavLink
                             to={link.path}
                             onClick={() => { closeMenu(); }}
-                            exact={link.exact}
+                            end={link.end.toString()}
                             // activeClassName="active-link"
-                            isactive={'actived'}
+                            // isactive={'active'}
                         >
                            {link.text}
                         </NavLink>
