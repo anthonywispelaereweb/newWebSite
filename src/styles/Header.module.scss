@@ -5,6 +5,7 @@
     &_ctn {
         position: relative;
         width: 100%;
+
     }
 
     &_button {
@@ -34,8 +35,18 @@
 
         &_item {
             position: relative;
-            a.active {
-                color: #3fffd2;
+            a[class="active"] {
+                // color: #3fffd2;
+                &:after {
+                    content: ' ';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0%;
+                    right: 0%;
+                    height: 3px;
+                    background-color: #3fffd2;
+                    transition: all .4s;
+                }
 
             }
 
@@ -53,7 +64,7 @@
                     bottom: 0;
                     left: 50%;
                     right: 50%;
-                    height: 0;
+                    height: 3px;
                     transition: all .4s;
                     border-radius: 3px;
 
@@ -64,8 +75,8 @@
                         content: ' ';
                         position: absolute;
                         bottom: 0;
-                        left: 0;
-                        right: 0;
+                        left: 0%;
+                        right: 0%;
                         height: 3px;
                         background-color: #3fffd2;
                         transition: all .4s;
@@ -95,6 +106,7 @@
                     margin-top: 3rem;
                 }
 
+               
                 & a {
                     display: block;
                     padding: 10px 20px;
@@ -103,15 +115,12 @@
                     text-transform: uppercase;
                     font-weight: bold;
 
-                    &.active {
-                        color: #3fffd2;
-
-                    }
                 }
             }
 
             &_showMenu {
                 width: 100%;
+                max-width: 205px;
                 padding: 1rem;
                 transition: all 1s;
             }

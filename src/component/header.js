@@ -1,7 +1,6 @@
 import React, { useState } from "react"
-import {
-    NavLink
-} from 'react-router-dom';
+import { NavLink } from "react-router-dom";
+
 
 import styles from "./../styles/Header.module.scss"
 import { MdClose } from "react-icons/md"
@@ -18,28 +17,26 @@ function Header() {
     const links = [
         {
             path: "",
-            text: "Accueil"
+            text: "Accueil",
+            exact: true
         },
         {
             path: "about",
-            text: "Mes expériences"
+            text: "Mes expériences",
+            exact: false
         },
         {
             path: "services",
-            text: "Mes services"
+            text: "Mes services",
+            exact: false
         },
         {
             path: "contact",
-            text: "Contacts"
+            text: "Contacts",
+            exact: false
         }
     ]
-    const checkActive = (match, location) => {
-        //some additional logic to verify you are in the home URI
-        if (!location) return false;
-        const { pathname } = location;
-        console.log(pathname);
-        return pathname === "/";
-    }
+
     return <nav className={styles.navBar_ctn}>
         <button className={styles.navBar_button} onClick={handleToggle}>{navbarOpen ? (
             <MdClose style={{ color: "#7b7b7b", width: "40px", height: "40px" }} />
@@ -52,11 +49,12 @@ function Header() {
                     return <li key={idx} className={styles.menuNav_list_item} >
                         <NavLink
                             to={link.path}
-                            onClick={() => closeMenu()}
+                            onClick={() => { closeMenu(); }}
+                            exact={link.exact}
                             // activeClassName="active-link"
-                            isActive={checkActive}
+                            isactive={'actived'}
                         >
-                            {link.text}
+                           {link.text}
                         </NavLink>
                     </li>
                 })
