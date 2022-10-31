@@ -1,0 +1,22 @@
+.container {
+    background: #eee;
+    .slide {
+        position: relative;
+        .img {
+            max-width : 600px;
+            margin: auto;
+            display: block;
+        }
+        .description {
+            &_ctn {
+                position: absolute;
+                top: 20%;
+                bottom: 20%;
+                left: 20%;
+                right: 20%;
+                background: rgba(255 ,255, 255, .4);
+
+            }
+        }
+    }
+}

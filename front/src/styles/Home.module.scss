@@ -1,0 +1,8 @@
+video {
+    max-width: 200px;
+    margin: auto;
+    display: flex;
+    &_ctn {
+        width: 100%;
+    }
+}

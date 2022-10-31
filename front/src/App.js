@@ -6,7 +6,7 @@ import {
 import './styles/App.scss';
 import Header from "./component/header"
 import Home from "./component/home"
-import About from "./component/about"
+import Experiences from "./component/experiences"
 import Services from "./component/services"
 import Contact from "./component/contact"
 
@@ -17,7 +17,7 @@ function App() {
         <Header />
 
         <Routes>
-          <Route path='/about' element={< About />}></Route>
+          <Route path='/experiences' element={< Experiences />}></Route>
           <Route path='/services' element={< Services />}></Route>
           <Route path='/contact' element={< Contact />}></Route>
           <Route exact path='/' element={< Home />}></Route>

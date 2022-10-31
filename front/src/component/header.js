@@ -21,7 +21,7 @@ function Header() {
             end: true
         },
         {
-            path: "about",
+            path: "experiences",
             text: "Experiences",
             end: false
         },
@@ -51,10 +51,8 @@ function Header() {
                             to={link.path}
                             onClick={() => { closeMenu(); }}
                             end={link.end.toString()}
-                            // activeClassName="active-link"
-                            // isactive={'active'}
                         >
-                           {link.text}
+                            {link.text}
                         </NavLink>
                     </li>
                 })
